@@ -1,7 +1,9 @@
+import { Container } from "./style";
+
 export function SignIn() {
   return (
-    <div>
+    <Container>
       <h1>Hello World!</h1>
-    </div>
+    </Container>
   );
 }
