@@ -17,6 +17,10 @@ export default createGlobalStyle`
     font-size: 1.6rem;
     -webkit-font-smoothing: antialiased;
   }
+  
+  body, input, label, select, textarea {
+    font-family: 'Roboto', sans-serif;
+  }
 
   a {
     text-decoration: none;
@@ -25,6 +29,7 @@ export default createGlobalStyle`
 
   a, button {
     cursor: pointer;
+    font-family: 'Poppins', sans-serif;
   }
 
   a:hover {
