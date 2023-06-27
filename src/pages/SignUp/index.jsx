@@ -3,7 +3,7 @@ import Logo from "../../assets/polygon.svg";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 
-export function SignIn() {
+export function SignUp() {
   return (
     <Container>
       <Brand>
@@ -12,7 +12,13 @@ export function SignIn() {
       </Brand>
       <main>
         <Form>
-          <h1>Faça login</h1>
+          <h1>Crie sua conta</h1>
+          <Input
+            id="name"
+            type="text"
+            label="Seu nome"
+            placeholder="Exemplo: Maria da Silva"
+          />
           <Input
             id="email"
             type="text"
@@ -25,8 +31,8 @@ export function SignIn() {
             label="Senha"
             placeholder="No mínimo 6 caracteres"
           />
-          <Button title="Entrar" loading />
-          <a href="/">Criar uma conta</a>
+          <Button title="Criar conta" loading />
+          <a href="/">Já tenho uma conta</a>
         </Form>
       </main>
     </Container>

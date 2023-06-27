@@ -10,10 +10,10 @@ export const Container = styled.div`
     grid-template-columns: auto auto;
     align-items: center;
 
-    > main {      
+    > main {
       background-color: ${({ theme }) => theme.COLORS.DARK_700};
       border-radius: 1.6rem;
-      padding: 6.4rem;
+      padding: 4rem 6rem;
     }
   }
 `;
