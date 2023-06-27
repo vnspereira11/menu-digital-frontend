@@ -27,13 +27,13 @@ export default createGlobalStyle`
     transform: filter 0.2s;
   }
 
+  a:hover {
+    filter: brightness(0.9);
+  }
+
   a, button {
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
-  }
-
-  a:hover {
-    transition: brightness(0.9);
   }
 
   ul {

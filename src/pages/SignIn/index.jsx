@@ -11,6 +11,7 @@ export function SignIn() {
         <p>food explorer</p>
       </Brand>
       <Form>
+        <h1>Faça login</h1>
         <Input
           id="email"
           type="text"
@@ -24,6 +25,7 @@ export function SignIn() {
           placeholder="No mínimo 6 caracteres"
         />
         <Button title="Entrar" loading />
+        <a href="/">Criar uma conta</a>
       </Form>
     </Container>
   );
