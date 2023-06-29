@@ -36,7 +36,7 @@ export const Brand = styled.div`
     height: 2.4rem;
   }
 
-  p {
+  > p {
     font-size: 2rem;
     font-weight: 700;
   }

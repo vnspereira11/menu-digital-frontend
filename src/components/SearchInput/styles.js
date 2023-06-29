@@ -7,7 +7,6 @@ export const Container = styled.div`
 
   background-color: ${({ theme }) => theme.COLORS.DARK_900};
   border-radius: 0.5rem;
-  margin: 2rem;
 
   svg {
     font-size: 2.4rem;
