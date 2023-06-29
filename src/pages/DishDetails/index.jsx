@@ -6,7 +6,7 @@ export function DishDetails() {
   return (
     <Container>
       <NavBarMobile />
-      <div>teste</div>
+
       <Footer />
     </Container>
   );
