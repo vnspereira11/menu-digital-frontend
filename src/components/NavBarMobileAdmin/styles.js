@@ -10,8 +10,8 @@ export const Container = styled.header`
 
   > nav {
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    gap: 1.6rem;
   }
 `;
 
@@ -27,6 +27,7 @@ export const Menu = styled.button`
 `;
 
 export const Brand = styled.div`
+  margin: 0 auto;
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -36,38 +37,14 @@ export const Brand = styled.div`
     height: 2.4rem;
   }
 
-  p {
+  > p {
     font-size: 2rem;
     font-weight: 700;
   }
-`;
-
-export const Order = styled.button`
-  border: none;
-  background: none;
-  height: 3.2rem;
-  position: relative;
-
-  > svg {
-    font-size: 3.2rem;
-    color: ${({ theme }) => theme.COLORS.LIGHT_100};
-  }
 
   > span {
-    width: 2rem;
-    height: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: ${({ theme }) => theme.COLORS.TOMATO_200};
-    border-radius: 50%;
-    color: ${({ theme }) => theme.COLORS.LIGHT_100};
-    font-size: 1.4rem;
-    font-weight: 500;
-    line-height: 2.4rem;
-    padding: 1.2rem;
-    position: absolute;
-    top: -0.5rem;
-    right: -1rem;
+    color: ${({ theme }) => theme.COLORS.CAKE_200};
+    font-size: 1.2rem;
+    font-weight: 400;
   }
 `;
