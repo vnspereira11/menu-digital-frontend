@@ -12,9 +12,14 @@ export const Container = styled.button`
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  transition: 0.3s;
 
   > svg {
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
     font-size: 3.2rem;
+  }
+
+  &:hover {
+    background-color: ${({ theme }) => theme.COLORS.TOMATO_200};
   }
 `;

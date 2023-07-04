@@ -10,6 +10,7 @@ export const Container = styled.button`
   font-weight: 500;
   line-height: 2.4rem;
   padding: 1.2rem 2.4rem;
+  transition: 0.3s;
 
   &:hover {
     background-color: ${({ theme }) => theme.COLORS.TOMATO_200};
