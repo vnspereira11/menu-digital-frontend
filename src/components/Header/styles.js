@@ -8,8 +8,9 @@ export const Container = styled.header`
   padding: 5.6rem 2.8rem 2.4rem;
 
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
 
   @media (min-width: 1024px) {
     gap: 3.2rem;
@@ -55,7 +56,6 @@ export const Brand = styled.div`
 
     > p {
       font-size: 2.4rem;
-      font-weight: 700;
     }
   }
 `;
