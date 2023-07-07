@@ -1,19 +1,19 @@
 import { FiSearch } from "react-icons/fi";
 import { Container } from "./styles";
-import { Header } from "../../components/Header";
+import { HeaderAdmin } from "../../components/HeaderAdmin";
 import { SearchInput } from "../../components/SearchInput";
 import { Footer } from "../../components/Footer";
 
 export function DishDetails() {
   return (
     <Container>
-      <Header>
+      <HeaderAdmin>
         <SearchInput
           icon={FiSearch}
           type="text"
           placeholder="Busque por pratos ou ingredientes"
         />
-      </Header>
+      </HeaderAdmin>
     </Container>
   );
 }
