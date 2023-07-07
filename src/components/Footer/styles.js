@@ -6,8 +6,8 @@ export const Container = styled.footer`
   background-color: ${({ theme }) => theme.COLORS.DARK_600};
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 0 1rem;
+  justify-content: space-between;
+  padding: 0 2.8rem;
 
   > p {
     color: ${({ theme }) => theme.COLORS.LIGHT_200};
@@ -21,9 +21,8 @@ export const Container = styled.footer`
     }
   }
 
-  @media (min-width: 768px) {
-    justify-content: space-between;
-    padding: 0 12.3rem;
+  @media (min-width: 1024px) {
+    padding: 0 5.6rem;
 
     p {
       font-size: 1.4rem;
@@ -57,7 +56,7 @@ export const Brand = styled.div`
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     > img {
       width: 3rem;
       height: 3rem;

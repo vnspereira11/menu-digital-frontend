@@ -9,3 +9,8 @@ export const Container = styled.div`
     "content"
     "footer";
 `;
+
+export const Content = styled.main`
+  grid-area: content;
+  padding: 3.2rem 5.6rem;
+`;
