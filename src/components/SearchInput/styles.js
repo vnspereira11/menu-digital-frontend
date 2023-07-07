@@ -11,7 +11,7 @@ export const Container = styled.div`
   svg {
     font-size: 2.4rem;
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
-    margin-left: 14.4rem;
+    margin-left: 2.4rem;
   }
 
   > input {

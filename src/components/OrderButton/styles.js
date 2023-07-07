@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.button`
   height: 5.6rem;
+  width: 100%;
   background-color: ${({ theme }) => theme.COLORS.TOMATO_100};
   border: none;
   border-radius: 0.5rem;
@@ -11,6 +12,7 @@ export const Container = styled.button`
   padding: 1.2rem 3.2rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.8rem;
   transition: 0.3s;
 
