@@ -1,7 +1,14 @@
-import { FiSearch } from "react-icons/fi";
-import { Container, Content } from "./styles";
+import { FiSearch, FiChevronLeft, FiPlus, FiMinus } from "react-icons/fi";
+import { PiReceiptBold } from "react-icons/pi";
+
+import dishImg from "../../assets/ravanello300.svg";
+import { Container, Content, Dish, AddOrder } from "./styles";
+
 import { Header } from "../../components/Header";
 import { SearchInput } from "../../components/SearchInput";
+import { OrderButton } from "../../components/OrderButton";
+import { Tag } from "../../components/Tag";
+import { Stepper } from "../../components/Stepper";
 import { Footer } from "../../components/Footer";
 
 export function DishDetails() {
@@ -14,20 +21,38 @@ export function DishDetails() {
           placeholder="Busque por pratos ou ingredientes"
         />
       </Header>
-      <Content>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil ab
-          tenetur sit perspiciatis assumenda aliquid hic odio voluptatem eum ut
-          esse, provident nobis omnis dicta exercitationem harum! Magni,
-          accusantium necessitatibus.
-        </p>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil ab
-          tenetur sit perspiciatis assumenda aliquid hic odio voluptatem eum ut
-          esse, provident nobis omnis dicta exercitationem harum! Magni,
-          accusantium necessitatibus.
-        </p>
-      </Content>
+      <main>
+        <Content>
+          <a href="/">
+            <FiChevronLeft />
+            voltar
+          </a>
+          <Dish>
+            <div className="dish-image">
+              <img src={dishImg} alt="" />
+            </div>
+            <div className="dish-description">
+              <h1>Salada Ravanello</h1>
+              <p>
+                Rabanetes, folhas verdes e molho agridoce salpicados com
+                gergelim.
+              </p>
+            </div>
+            <div className="dish-tags">
+              <Tag title="alface" />
+              <Tag title="cebola" />
+              <Tag title="pão naan" />
+              <Tag title="pepino" />
+              <Tag title="rabanete" />
+              <Tag title="tomate" />
+            </div>
+          </Dish>
+          <AddOrder>
+            <Stepper count="01" />
+            <OrderButton icon={PiReceiptBold} title="R$ " amount={25} />
+          </AddOrder>
+        </Content>
+      </main>
       <Footer />
     </Container>
   );
