@@ -22,21 +22,6 @@ export const Content = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  > a {
-    display: flex;
-    align-items: center;
-    align-self: start;
-    color: ${({ theme }) => theme.COLORS.LIGHT_300};
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 2.4rem;
-
-    svg {
-      color: ${({ theme }) => theme.COLORS.LIGHT_300};
-      font-size: 3.2rem;
-    }
-  }
 `;
 
 export const Dish = styled.section`

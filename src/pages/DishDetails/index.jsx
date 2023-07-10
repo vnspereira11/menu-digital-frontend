@@ -1,4 +1,4 @@
-import { FiSearch, FiChevronLeft, FiPlus, FiMinus } from "react-icons/fi";
+import { FiSearch, FiChevronLeft } from "react-icons/fi";
 import { PiReceiptBold } from "react-icons/pi";
 
 import dishImg from "../../assets/ravanello300.svg";
@@ -7,6 +7,7 @@ import { Container, Content, Dish, AddOrder } from "./styles";
 import { Header } from "../../components/Header";
 import { SearchInput } from "../../components/SearchInput";
 import { OrderButton } from "../../components/OrderButton";
+import { BackButton } from "../../components/BackButton";
 import { Tag } from "../../components/Tag";
 import { Stepper } from "../../components/Stepper";
 import { Footer } from "../../components/Footer";
@@ -23,10 +24,7 @@ export function DishDetails() {
       </Header>
       <main>
         <Content>
-          <a href="/">
-            <FiChevronLeft />
-            voltar
-          </a>
+          <BackButton href="/" title="voltar" />
           <Dish>
             <div className="dish-image">
               <img src={dishImg} alt="" />
@@ -49,7 +47,7 @@ export function DishDetails() {
           </Dish>
           <AddOrder>
             <Stepper count="01" />
-            <OrderButton icon={PiReceiptBold} title="R$ " amount={25} />
+            <OrderButton icon={PiReceiptBold} title="pedir - R$ " amount={25} />
           </AddOrder>
         </Content>
       </main>

@@ -5,7 +5,7 @@ export function OrderButton({ icon: Icon, title, amount, ...rest }) {
     <Container {...rest}>
       {Icon && <Icon />}
       <span>
-        {title} ({amount})
+        {title} {amount}
       </span>
     </Container>
   );
