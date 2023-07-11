@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,12 +8,17 @@ export const Container = styled.div`
 
   > button {
     background: transparent;
-    border: none;    
+    border: none;
     height: 2.4rem;
+    transform: filter 0.2s;
 
     svg {
       color: ${({ theme }) => theme.COLORS.LIGHT_300};
       font-size: 2.4rem;
+    }
+
+    &:hover {
+      filter: brightness(0.9);
     }
   }
 
