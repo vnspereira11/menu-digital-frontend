@@ -4,6 +4,7 @@ import { Container } from "./styles";
 import { Header } from "../../components/Header";
 import { SearchInput } from "../../components/SearchInput";
 import { Banner } from "../../components/Banner";
+import { Item } from "../../components/Item";
 import { Footer } from "../../components/Footer";
 
 export function Home() {
@@ -18,6 +19,7 @@ export function Home() {
       </Header>
       <main>
         <Banner />
+        <Item data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
       </main>
       <Footer />
     </Container>
