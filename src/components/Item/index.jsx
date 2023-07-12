@@ -8,7 +8,7 @@ import { Button } from "../Button";
 
 export function Item({ data, ...rest }) {
   return (
-    <Container>
+    <Container {...rest}>
       <Favorite>
         <FiHeart />
       </Favorite>
