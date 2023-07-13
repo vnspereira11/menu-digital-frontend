@@ -7,7 +7,10 @@ import { SearchInput } from "../../components/SearchInput";
 import { BackButton } from "../../components/BackButton";
 import { Input } from "../../components/Input";
 import { Select } from "../../components/Select";
+import { TagInput } from "../../components/TagInput";
 import { Textarea } from "../../components/Textarea";
+import { Button } from "../../components/Button";
+
 import { Footer } from "../../components/Footer";
 
 export function New() {
@@ -41,6 +44,12 @@ export function New() {
             <option value="dessert">Sobremesa</option>
             <option value="beverage">Bebida</option>
           </Select>
+          <TagInput
+            id="ingredients"
+            label="Ingredientes"
+            placeholder="Adicionar"
+            isNew
+          />
           <Input
             id="price"
             type="text"
@@ -52,6 +61,7 @@ export function New() {
             label="Descrição"
             placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
           />
+          <Button loading title="Salvar alterações" />
         </Form>
       </main>
       <Footer />

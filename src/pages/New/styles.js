@@ -12,6 +12,8 @@ export const Container = styled.div`
 
   > main {
     grid-area: content;
+    max-width: 36.4rem;
+    margin: 0 auto;
     padding: 1.2rem 3.2rem;
 
     h1 {
@@ -29,4 +31,5 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+  margin-bottom: 5.3rem;
 `;
