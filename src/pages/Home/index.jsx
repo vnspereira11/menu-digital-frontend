@@ -21,7 +21,11 @@ export function Home() {
       <main>
         <Banner />
         <Section title="Refeições">
-          <Item data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
+          <Item
+            className="is-admin"
+            isAdmin
+            data={{ title: "Salada Ravanello >", price: "R$ 49,97" }}
+          />
         </Section>
         <Section title="Sobremesas">
           <Item data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />

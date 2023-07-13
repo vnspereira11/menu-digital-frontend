@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 21rem;
+  height: 292px;
   background-color: ${({ theme }) => theme.COLORS.DARK_300};
   border: 1px solid ${({ theme }) => theme.COLORS.DARK_200};
   border-radius: 0.8rem;
@@ -9,6 +10,12 @@ export const Container = styled.div`
   margin-bottom: 3rem;
 
   position: relative;
+
+  &.is-admin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   > .dish-details {
     display: flex;
@@ -23,7 +30,8 @@ export const Container = styled.div`
       border-radius: 50%;
     }
 
-    h3 {
+    a {
+      color: ${({ theme }) => theme.COLORS.LIGHT_300};
       font-family: "Poppins", sans-serif;
       font-size: 1.4rem;
       font-weight: 500;

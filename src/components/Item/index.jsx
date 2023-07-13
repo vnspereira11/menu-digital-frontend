@@ -1,24 +1,22 @@
 import dishImg from "../../assets/ravanello300.svg";
-import { FiHeart } from "react-icons/fi";
+import { FiHeart, FiEdit3 } from "react-icons/fi";
 
 import { Container, Favorite } from "./styles";
 
 import { Stepper } from "../Stepper";
 import { Button } from "../Button";
 
-export function Item({ data, ...rest }) {
+export function Item({ data, isAdmin, ...rest }) {
   return (
     <Container {...rest}>
-      <Favorite>
-        <FiHeart />
-      </Favorite>
+      <Favorite>{isAdmin ? <FiEdit3 /> : <FiHeart />}</Favorite>
       <div className="dish-details">
         <img src={dishImg} alt="" />
-        <h3>{data.title}</h3>
+        <a href="#">{data.title}</a>
         <span className="price">{data.price}</span>
-        <Stepper count="01" />
+        {isAdmin ? null : <Stepper count="01" />}
       </div>
-      <Button title="incluir" />
+      {isAdmin ? null : <Button title="incluir" />}
     </Container>
   );
 }
