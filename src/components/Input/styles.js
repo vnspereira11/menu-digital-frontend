@@ -16,7 +16,8 @@ export const Container = styled.p`
     background-color: ${({ theme }) => theme.COLORS.DARK_900};
     border: 0;
     border-radius: 0.8rem;
-    color: ${({ theme }) => theme.COLORS.LIGHT_500};
+    color: ${({ theme }) => theme.COLORS.LIGHT_300};
+    font-size: 1.4rem;
     padding: 1.2rem 1.4rem;
 
     &placeholder {

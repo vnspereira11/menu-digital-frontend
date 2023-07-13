@@ -6,6 +6,7 @@ import { HeaderAdmin } from "../../components/HeaderAdmin";
 import { SearchInput } from "../../components/SearchInput";
 import { BackButton } from "../../components/BackButton";
 import { Input } from "../../components/Input";
+import { Select } from "../../components/Select";
 import { Textarea } from "../../components/Textarea";
 import { Footer } from "../../components/Footer";
 
@@ -35,6 +36,11 @@ export function New() {
             label="Nome"
             placeholder="Ex.: Salada Ceasar"
           />
+          <Select id="category" label="Categoria">
+            <option value="meal">Refeição</option>
+            <option value="dessert">Sobremesa</option>
+            <option value="beverage">Bebida</option>
+          </Select>
           <Input
             id="price"
             type="text"
