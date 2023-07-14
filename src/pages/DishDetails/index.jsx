@@ -12,7 +12,7 @@ import {
 } from "./styles";
 
 import { Header } from "../../components/Header";
-import { SearchInput } from "../../components/SearchInput";
+import { Input } from "../../components/Input";
 import { OrderButton } from "../../components/OrderButton";
 import { BackButton } from "../../components/BackButton";
 import { Tag } from "../../components/Tag";
@@ -23,9 +23,9 @@ export function DishDetails() {
   return (
     <Container>
       <Header>
-        <SearchInput
+        <Input
           icon={FiSearch}
-          type="text"
+          type="search"
           placeholder="Busque por pratos ou ingredientes"
         />
       </Header>

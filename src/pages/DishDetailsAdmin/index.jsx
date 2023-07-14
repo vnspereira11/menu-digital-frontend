@@ -11,7 +11,7 @@ import {
 } from "./styles";
 
 import { HeaderAdmin } from "../../components/HeaderAdmin";
-import { SearchInput } from "../../components/SearchInput";
+import { Input } from "../../components/Input";
 import { BackButton } from "../../components/BackButton";
 import { Tag } from "../../components/Tag";
 import { Button } from "../../components/Button";
@@ -21,9 +21,9 @@ export function DishDetailsAdmin() {
   return (
     <Container>
       <HeaderAdmin>
-        <SearchInput
+        <Input
           icon={FiSearch}
-          type="text"
+          type="search"
           placeholder="Busque por pratos ou ingredientes"
         />
       </HeaderAdmin>

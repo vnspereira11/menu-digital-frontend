@@ -2,7 +2,6 @@ import { FiSearch } from "react-icons/fi";
 import { Container } from "./styles";
 
 import { Header } from "../../components/Header";
-import { SearchInput } from "../../components/SearchInput";
 import { Banner } from "../../components/Banner";
 import { Section } from "../../components/Section";
 import { Item } from "../../components/Item";
@@ -12,9 +11,9 @@ export function Home() {
   return (
     <Container>
       <Header>
-        <SearchInput
+        <Input
           icon={FiSearch}
-          type="text"
+          type="search"
           placeholder="Busque por pratos ou ingredientes"
         />
       </Header>

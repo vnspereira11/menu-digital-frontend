@@ -3,7 +3,6 @@ import { FiSearch, FiUpload } from "react-icons/fi";
 import { Container, Form } from "./styles";
 
 import { HeaderAdmin } from "../../components/HeaderAdmin";
-import { SearchInput } from "../../components/SearchInput";
 import { BackButton } from "../../components/BackButton";
 import { FileInput } from "../../components/FileInput";
 import { Input } from "../../components/Input";
@@ -18,7 +17,7 @@ export function New() {
   return (
     <Container>
       <HeaderAdmin>
-        <SearchInput
+        <Input
           icon={FiSearch}
           type="text"
           placeholder="Busque por pratos ou ingredientes"
@@ -30,8 +29,8 @@ export function New() {
         <Form>
           <div className="image-wrapper">
             <p>Imagem do prato</p>
-              <FileInput id="image" icon={FiUpload} label="Imagem do prato" />
-          </div>        
+            <FileInput id="image" icon={FiUpload} label="Imagem do prato" />
+          </div>
           <Input
             id="name"
             type="text"
@@ -64,7 +63,9 @@ export function New() {
               placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
             />
           </div>
-          <div className="button-wrapper"><Button loading title="Salvar alterações" /></div>
+          <div className="button-wrapper">
+            <Button loading title="Salvar alterações" />
+          </div>
         </Form>
       </main>
       <Footer />

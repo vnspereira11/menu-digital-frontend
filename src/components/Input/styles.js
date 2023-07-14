@@ -26,9 +26,11 @@ export const Container = styled.div`
 
       display: flex;
       align-items: center;
+      gap: 1.4rem;
 
       svg {
         font-size: 2.4rem;
+        color: ${({ theme }) => theme.COLORS.LIGHT_500};
       }
 
       input {
