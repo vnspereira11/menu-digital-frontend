@@ -12,14 +12,7 @@ export const Container = styled.div`
 
   > main {
     grid-area: content;
-    max-width: 36.4rem;
-    margin: 0 auto;
     padding: 1.2rem 3.2rem;
-
-    @media (min-width: 1024px) {
-      max-width: 100%;
-      margin: 0;
-    }
 
     h1 {
       color: ${({ theme }) => theme.COLORS.LIGHT_300};
@@ -38,7 +31,15 @@ export const Form = styled.form`
   gap: 2.4rem;
   margin-bottom: 5.3rem;
 
-  @media (min-width: 1024px) {
+  .image-wrapper {
+    p {
+      color: ${({ theme }) => theme.COLORS.LIGHT_400};
+      font-size: 1.6rem;
+      margin-bottom: 0.9rem;
+    }
+  }
+
+  @media (min-width: 768px) {
     display: grid;
     grid-template-columns: auto auto auto;
 

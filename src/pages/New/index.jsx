@@ -28,7 +28,10 @@ export function New() {
         <BackButton title="voltar" />
         <h1>Adicionar prato</h1>
         <Form>
-          <FileInput id="image" icon={FiUpload} label="Imagem do prato" />
+          <div className="image-wrapper">
+            <p>Imagem do prato</p>
+              <FileInput id="image" icon={FiUpload} label="Imagem do prato" />
+          </div>        
           <Input
             id="name"
             type="text"
