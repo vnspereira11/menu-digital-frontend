@@ -16,6 +16,11 @@ export const Container = styled.div`
     margin: 0 auto;
     padding: 1.2rem 3.2rem;
 
+    @media (min-width: 1024px) {
+      max-width: 100%;
+      margin: 0;
+    }
+
     h1 {
       color: ${({ theme }) => theme.COLORS.LIGHT_300};
       font-family: "Poppins", sans-serif;
@@ -32,4 +37,20 @@ export const Form = styled.form`
   flex-direction: column;
   gap: 2.4rem;
   margin-bottom: 5.3rem;
+
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    .ingredients-wrapper {
+      grid-column: 1 / 3;
+    }
+    .description-wrapper {
+      grid-column: 1 / -1;
+    }
+    .button-wrapper {
+      grid-column: 3 / 4;
+      place-self: end;
+    }
+  }
 `;

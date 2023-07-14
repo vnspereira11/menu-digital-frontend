@@ -40,24 +40,28 @@ export function New() {
             <option value="dessert">Sobremesa</option>
             <option value="beverage">Bebida</option>
           </Select>
-          <TagInput
-            id="ingredients"
-            label="Ingredientes"
-            placeholder="Adicionar"
-            isNew
-          />
+          <div className="ingredients-wrapper">
+            <TagInput
+              id="ingredients"
+              label="Ingredientes"
+              placeholder="Adicionar"
+              isNew
+            />
+          </div>
           <Input
             id="price"
             type="text"
             label="Preço"
             placeholder="Ex.: R$ 00,00"
           />
-          <Textarea
-            id="description"
-            label="Descrição"
-            placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
-          />
-          <Button loading title="Salvar alterações" />
+          <div className="description-wrapper">
+            <Textarea
+              id="description"
+              label="Descrição"
+              placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+            />
+          </div>
+          <div className="button-wrapper"><Button loading title="Salvar alterações" /></div>
         </Form>
       </main>
       <Footer />
