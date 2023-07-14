@@ -39,6 +39,16 @@ export const Form = styled.form`
     }
   }
 
+  .button-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+
+    .delete-button {
+      background-color: ${({ theme }) => theme.COLORS.DARK_800};
+    }
+  }
+
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(3, auto);
@@ -51,7 +61,6 @@ export const Form = styled.form`
     }
     .button-wrapper {
       grid-column: 3 / 4;
-      place-self: end;
     }
   }
 `;

@@ -11,7 +11,7 @@ export const Container = styled.header`
   align-items: center;
   gap: 1rem;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     gap: 3.2rem;
     padding: 2.4rem 5.6rem;
   }
@@ -27,7 +27,7 @@ export const Menu = styled.button`
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `;
@@ -59,7 +59,7 @@ export const Brand = styled.div`
     font-size: 1.2rem;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     flex-direction: column;
     align-items: end;
     gap: 0;
@@ -106,7 +106,7 @@ export const OrderSmall = styled.button`
     right: -1rem;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `;
@@ -114,7 +114,7 @@ export const OrderSmall = styled.button`
 export const Search = styled.div`
   display: none;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     display: flex;
     flex: 1;
   }
@@ -123,7 +123,7 @@ export const Search = styled.div`
 export const OrderLarge = styled.div`
   display: none;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     width: 21.6rem;
     display: block;
   }
@@ -139,7 +139,7 @@ export const Logout = styled.button`
     font-size: 3.2rem;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     display: block;
   }
 `;
