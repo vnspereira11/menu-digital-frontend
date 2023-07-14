@@ -1,10 +1,15 @@
 import { Container } from "./styles";
 
-export function Input({ id, label, type, ...rest }) {
+export function Input({ icon: Icon, id, label, type, ...rest }) {
   return (
     <Container>
-      <label htmlFor={id}>{label}</label>
-      <input {...rest} id={id} type={type} />
+      {label && <label htmlFor={id}>{label}</label>}
+      <div>
+        <div className="input-wrapper">
+          {Icon && <Icon />}
+          <input {...rest} id={id} type={type} />
+        </div>
+      </div>
     </Container>
   );
 }

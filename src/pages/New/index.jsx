@@ -1,10 +1,11 @@
-import { FiSearch } from "react-icons/fi";
+import { FiSearch, FiUpload } from "react-icons/fi";
 
 import { Container, Form } from "./styles";
 
 import { HeaderAdmin } from "../../components/HeaderAdmin";
 import { SearchInput } from "../../components/SearchInput";
 import { BackButton } from "../../components/BackButton";
+import { FileInput } from "../../components/FileInput";
 import { Input } from "../../components/Input";
 import { Select } from "../../components/Select";
 import { TagInput } from "../../components/TagInput";
@@ -27,12 +28,7 @@ export function New() {
         <BackButton title="voltar" />
         <h1>Adicionar prato</h1>
         <Form>
-          <Input
-            id="img"
-            type="file"
-            label="Imagem do prato"
-            placeholder="Selecione imagem"
-          />
+          <FileInput id="image" icon={FiUpload} label="Imagem do prato" />
           <Input
             id="name"
             type="text"

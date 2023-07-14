@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.p`
+export const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -11,18 +11,40 @@ export const Container = styled.p`
     font-size: 1.6rem;
   }
 
-  > input {
+  > div {
+    width: 100%;
     height: 4.8rem;
     background-color: ${({ theme }) => theme.COLORS.DARK_900};
-    border: 0;
     border-radius: 0.8rem;
-    color: ${({ theme }) => theme.COLORS.LIGHT_300};
-    font-size: 1.4rem;
     padding: 1.2rem 1.4rem;
+    display: flex;
+    align-items: center;
 
-    &placeholder {
-      color: ${({ theme }) => theme.COLORS.LIGHT_500};
-      font-size: 1.6rem;
+    > .input-wrapper {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      align-items: center;
+
+      svg {
+        font-size: 2.4rem;
+      }
+
+      input {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: 0;
+        color: ${({ theme }) => theme.COLORS.LIGHT_300};
+        font-size: 1.4rem;
+        outline: 0;
+
+        &placeholder {
+          color: ${({ theme }) => theme.COLORS.LIGHT_500};
+          font-size: 1.6rem;
+        }
+      }
     }
   }
 `;
