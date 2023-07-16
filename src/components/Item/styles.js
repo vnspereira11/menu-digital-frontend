@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 21rem;
-  height: 292px;
+  height: 29.2rem;
   background-color: ${({ theme }) => theme.COLORS.DARK_300};
   border: 1px solid ${({ theme }) => theme.COLORS.DARK_200};
   border-radius: 0.8rem;
   padding: 2.4rem;
   margin-bottom: 3rem;
-
+  flex: none;
   position: relative;
 
   &.is-admin {
@@ -27,6 +27,7 @@ export const Container = styled.div`
     > img {
       width: 8.8rem;
       height: 8.8rem;
+      object-fit: cover;
       border-radius: 50%;
     }
 
@@ -54,12 +55,12 @@ export const Container = styled.div`
     }
   }
 
-  > button {
+  > a {
     padding: 0.6rem;
   }
 `;
 
-export const Favorite = styled.button`
+export const Favorite = styled.a`
   border: none;
   background: none;
   position: absolute;
