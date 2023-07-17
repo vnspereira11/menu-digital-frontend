@@ -1,7 +1,7 @@
 import { FiSearch } from "react-icons/fi";
 import { Container } from "./styles";
 
-import { Header } from "../../components/Header";
+import { HeaderAdmin } from "../../components/HeaderAdmin";
 import { Input } from "../../components/Input";
 import { Banner } from "../../components/Banner";
 import { Section } from "../../components/Section";
@@ -9,16 +9,16 @@ import { Carousel } from "../../components/Carousel";
 import { Item } from "../../components/Item";
 import { Footer } from "../../components/Footer";
 
-export function Home() {
+export function Home({ isAdmin, ...rest }) {
   return (
-    <Container>
-      <Header>
+    <Container {...rest}>
+      <HeaderAdmin>
         <Input
           icon={FiSearch}
           type="search"
           placeholder="Busque por pratos ou ingredientes"
         />
-      </Header>
+      </HeaderAdmin>
       <main>
         <Banner />
         <Section title="Refeições">
