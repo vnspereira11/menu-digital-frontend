@@ -1,27 +1,82 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
-  height: 5.6rem;
   width: 100%;
-  background-color: ${({ theme }) => theme.COLORS.TOMATO_100};
   border: none;
-  border-radius: 0.5rem;
-  color: ${({ theme }) => theme.COLORS.LIGHT_100};
-  font-size: 1.4rem;
-  font-weight: 500;
-  padding: 1.2rem 3.2rem;
+  background: none;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  transition: 0.3s;
 
-  > svg {
+  position: relative;
+
+  transform: all 0.3s;
+
+  svg {
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
     font-size: 3.2rem;
   }
 
+  .title {
+    display: none;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+  }
+
+  .decoration {
+    height: 2rem;
+    width: 2rem;
+    background-color: ${({ theme }) => theme.COLORS.TOMATO_100};
+    border-radius: 50%;
+    color: ${({ theme }) => theme.COLORS.TOMATO_100};
+    padding: 1.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: -0.5rem;
+    left: 1.8rem;
+  }
+
+  .amount {
+    color: ${({ theme }) => theme.COLORS.LIGHT_100};
+    font-family: "Poppins", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+  }
+
   &:hover {
-    background-color: ${({ theme }) => theme.COLORS.TOMATO_200};
+    opacity: 0.8;
+  }
+
+  @media (min-width: 1024px) {
+    height: 4.8rem;
+    position: static;
+    background-color: ${({ theme }) => theme.COLORS.TOMATO_100};
+    border-radius: 0.5rem;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.2rem 3.2rem;
+    transform: all 0.3s;
+
+    .title {
+      display: block;
+      color: ${({ theme }) => theme.COLORS.LIGHT_100};
+    }
+
+    .decoration {
+      background-color: transparent;
+      color: ${({ theme }) => theme.COLORS.LIGHT_100};
+      position: static;
+    }
+
+    &:hover {
+      background-color: ${({ theme }) => theme.COLORS.TOMATO_200};
+      opacity: 1;
+    }
   }
 `;

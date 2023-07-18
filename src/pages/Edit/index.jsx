@@ -2,7 +2,7 @@ import { FiSearch, FiUpload } from "react-icons/fi";
 
 import { Container, Form } from "./styles";
 
-import { HeaderAdmin } from "../../components/HeaderAdmin";
+import { Header } from "../../components/Header";
 import { BackButton } from "../../components/BackButton";
 import { FileInput } from "../../components/FileInput";
 import { Input } from "../../components/Input";
@@ -16,13 +16,13 @@ import { Footer } from "../../components/Footer";
 export function Edit() {
   return (
     <Container>
-      <HeaderAdmin isAdmin>
+      <Header>
         <Input
           icon={FiSearch}
           type="search"
           placeholder="Busque por pratos ou ingredientes"
         />
-      </HeaderAdmin>
+      </Header>
       <main>
         <BackButton title="voltar" />
         <h1>Editar prato</h1>
