@@ -19,7 +19,7 @@ import { Tag } from "../../components/Tag";
 import { Stepper } from "../../components/Stepper";
 import { Footer } from "../../components/Footer";
 
-export function DishDetails() {
+export function Details() {
   return (
     <Container>
       <Header>
