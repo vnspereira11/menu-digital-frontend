@@ -24,7 +24,7 @@ export function Edit() {
         />
       </Header>
       <main>
-        <BackButton title="voltar" />
+        <BackButton title="voltar" to="/" />
         <h1>Editar prato</h1>
         <Form>
           <div className="image-wrapper">

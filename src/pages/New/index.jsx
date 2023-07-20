@@ -24,7 +24,7 @@ export function New() {
         />
       </Header>
       <main>
-        <BackButton title="voltar" />
+        <BackButton title="voltar" to="/" />
         <h1>Adicionar prato</h1>
         <Form>
           <div className="image-wrapper">

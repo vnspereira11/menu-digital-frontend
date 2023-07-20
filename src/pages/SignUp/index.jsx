@@ -1,5 +1,9 @@
 import { Container, Brand, Form } from "./style";
+
 import Logo from "../../assets/polygon.svg";
+
+import { Link } from "react-router-dom";
+
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 
@@ -32,7 +36,7 @@ export function SignUp() {
             placeholder="No mínimo 6 caracteres"
           />
           <Button title="Criar conta" loading />
-          <a href="/">Já tenho uma conta</a>
+          <Link to="/">Já tenho uma conta</Link>
         </Form>
       </main>
     </Container>

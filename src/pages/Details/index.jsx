@@ -30,7 +30,7 @@ export function Details() {
         />
       </Header>
       <main>
-        <BackButton href="/" title="voltar" />
+        <BackButton title="voltar" to="/" />
         <Content>
           <DishImage>
             <img src={dishImg} alt="" />
