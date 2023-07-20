@@ -1,9 +1,10 @@
 import { PiReceiptBold } from "react-icons/pi";
 import { FiMenu, FiLogOut } from "react-icons/fi";
 
-import { Container, Menu, Busca, Buttons, Logout } from "./styles";
+import logo from "../../assets/polygon.svg";
 
-import { Logo } from "../Logo";
+import { Container, Menu, Brand, Busca, Buttons, Logout } from "./styles";
+
 import { Button } from "../Button";
 import { OrderButton } from "../OrderButton";
 
@@ -13,11 +14,17 @@ export function Header({ children, isAdmin, ...rest }) {
       <Menu>
         <FiMenu />
       </Menu>
-      <Logo />
+      <Brand>
+        <div className="logo-wrapper">
+          <img src={logo} alt="Polígono azul decorativo" />
+          <p>food explorer</p>
+        </div>
+        {isAdmin && <span>admin</span>}
+      </Brand>
       <Busca>{children}</Busca>
       <Buttons>
         {isAdmin ? (
-          <Button title="Novo prato" />
+          <Button title="Novo prato" className="button-desktop" />
         ) : (
           <OrderButton icon={PiReceiptBold} title="Pedidos" amount="0" />
         )}

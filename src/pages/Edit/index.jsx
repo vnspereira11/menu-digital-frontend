@@ -16,7 +16,7 @@ import { Footer } from "../../components/Footer";
 export function Edit() {
   return (
     <Container>
-      <Header>
+      <Header isAdmin>
         <Input
           icon={FiSearch}
           type="search"
