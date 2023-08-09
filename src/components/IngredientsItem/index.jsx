@@ -2,7 +2,7 @@ import { FiPlus, FiX } from "react-icons/fi";
 
 import { Container } from "./styles";
 
-export function TagInput({ id, label, isNew, value, ...rest }) {
+export function IngredientsItem({ id, label, isNew, value, ...rest }) {
   return (
     <Container isNew={isNew}>
       <label htmlFor={id}>{label}</label>

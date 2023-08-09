@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FiSearch, FiUpload } from "react-icons/fi";
 
 import { Container, Form } from "./styles";
@@ -14,6 +15,13 @@ import { Button } from "../../components/Button";
 import { Footer } from "../../components/Footer";
 
 export function New() {
+  const [ingredients, setIngredients] = useState([]);
+  const [newIngredient, setNewIngredient] = useState("");
+
+  function handleAddIngredient() {
+    setIngredients((prevState) => [...prevState, newIngredient]);
+    setNewIngredient("");
+  }
   return (
     <Container>
       <Header isAdmin>
@@ -42,14 +50,26 @@ export function New() {
             <option value="dessert">Sobremesa</option>
             <option value="beverage">Bebida</option>
           </Select>
+
           <div className="ingredients-wrapper">
+            {ingredients.map((ingredient, index) => (
+              <TagInput
+                key={String(index)}
+                value={ingredient}
+                onClick={() => {}}
+              />
+            ))}
             <TagInput
+              isNew
               id="ingredients"
               label="Ingredientes"
               placeholder="Adicionar"
-              isNew
+              onChange={(e) => setNewIngredient(e.target.value)}
+              value={newIngredient}
+              onClick={handleAddIngredient}
             />
           </div>
+
           <Input
             id="price"
             type="text"
