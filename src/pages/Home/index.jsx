@@ -6,7 +6,7 @@ import { Input } from "../../components/Input";
 import { Banner } from "../../components/Banner";
 import { Section } from "../../components/Section";
 import { Carousel } from "../../components/Carousel";
-import { Item } from "../../components/Item";
+import { Card } from "../../components/Card";
 import { Footer } from "../../components/Footer";
 
 export function Home({ isAdmin, ...rest }) {
@@ -23,42 +23,42 @@ export function Home({ isAdmin, ...rest }) {
         <Banner />
         <Section title="Refeições">
           <Carousel>
-            <Item
+            <Card
               className="is-admin"
               isAdmin
               data={{ title: "Salada Ravanello >", price: "R$ 49,97" }}
             />
-            <Item
+            <Card
               className="is-admin"
               isAdmin
               data={{ title: "Salada Ravanello >", price: "R$ 49,97" }}
             />
-            <Item
+            <Card
               className="is-admin"
               isAdmin
               data={{ title: "Salada Ravanello >", price: "R$ 49,97" }}
             />
-            <Item
+            <Card
               className="is-admin"
               isAdmin
               data={{ title: "Salada Ravanello >", price: "R$ 49,97" }}
             />
-            <Item
+            <Card
               className="is-admin"
               isAdmin
               data={{ title: "Salada Ravanello >", price: "R$ 49,97" }}
             />
-            <Item
+            <Card
               className="is-admin"
               isAdmin
               data={{ title: "Salada Ravanello >", price: "R$ 49,97" }}
             />
-            <Item
+            <Card
               className="is-admin"
               isAdmin
               data={{ title: "Salada Ravanello >", price: "R$ 49,97" }}
             />
-            <Item
+            <Card
               className="is-admin"
               isAdmin
               data={{ title: "Salada Ravanello >", price: "R$ 49,97" }}
@@ -67,26 +67,26 @@ export function Home({ isAdmin, ...rest }) {
         </Section>
         <Section title="Sobremesas">
           <Carousel>
-            <Item data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
-            <Item data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
-            <Item data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
-            <Item data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
-            <Item data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
-            <Item data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
-            <Item data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
-            <Item data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
+            <Card data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
+            <Card data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
+            <Card data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
+            <Card data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
+            <Card data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
+            <Card data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
+            <Card data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
+            <Card data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
           </Carousel>
         </Section>
         <Section title="Bebidas">
           <Carousel>
-            <Item data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
-            <Item data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
-            <Item data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
-            <Item data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
-            <Item data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
-            <Item data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
-            <Item data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
-            <Item data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
+            <Card data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
+            <Card data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
+            <Card data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
+            <Card data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
+            <Card data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
+            <Card data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
+            <Card data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
+            <Card data={{ title: "Salada Ravanello >", price: "R$ 49,97" }} />
           </Carousel>
         </Section>
       </main>
