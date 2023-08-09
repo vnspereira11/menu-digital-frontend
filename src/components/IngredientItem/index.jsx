@@ -2,22 +2,13 @@ import { FiPlus, FiX } from "react-icons/fi";
 
 import { Container } from "./styles";
 
-export function IngredientItem({ id, label, isNew, value, ...rest }) {
+export function IngredientItem({ isNew, value, onClick, ...rest }) {
   return (
     <Container isNew={isNew}>
-      <label htmlFor={id}>{label}</label>
-      <div className="bg-field">
-        <div className="input-wrapper">
-          <input
-            type="text"
-            id={id}
-            value={value}
-            readOnly={!isNew}
-            {...rest}
-          />
-          <button type="button">{isNew ? <FiPlus /> : <FiX />}</button>
-        </div>
-      </div>
+      <input type="text" value={value} readOnly={!isNew} {...rest} />
+      <button type="button" onClick={onClick}>
+        {isNew ? <FiPlus /> : <FiX />}
+      </button>
     </Container>
   );
 }
