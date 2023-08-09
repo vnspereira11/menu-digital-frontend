@@ -15,7 +15,7 @@ import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { OrderButton } from "../../components/OrderButton";
 import { BackButton } from "../../components/BackButton";
-import { Tag } from "../../components/Tag";
+import { Ingredient } from "../../components/Ingredient";
 import { Stepper } from "../../components/Stepper";
 import { Footer } from "../../components/Footer";
 
@@ -41,12 +41,12 @@ export function Details() {
               Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
             </p>
             <DishTags>
-              <Tag title="alface" />
-              <Tag title="cebola" />
-              <Tag title="pão naan" />
-              <Tag title="pepino" />
-              <Tag title="rabanete" />
-              <Tag title="tomate" />
+              <Ingredient title="alface" />
+              <Ingredient title="cebola" />
+              <Ingredient title="pão naan" />
+              <Ingredient title="pepino" />
+              <Ingredient title="rabanete" />
+              <Ingredient title="tomate" />
             </DishTags>
             <AddOrder>
               <Stepper count="01" />

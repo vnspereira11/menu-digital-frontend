@@ -8,7 +8,7 @@ import { BackButton } from "../../components/BackButton";
 import { FileInput } from "../../components/FileInput";
 import { Input } from "../../components/Input";
 import { Select } from "../../components/Select";
-import { TagInput } from "../../components/TagInput";
+import { IngredientItem } from "../../components/IngredientItem";
 import { Textarea } from "../../components/Textarea";
 import { Button } from "../../components/Button";
 
@@ -53,13 +53,13 @@ export function New() {
 
           <div className="ingredients-wrapper">
             {ingredients.map((ingredient, index) => (
-              <TagInput
+              <IngredientItem
                 key={String(index)}
                 value={ingredient}
                 onClick={() => {}}
               />
             ))}
-            <TagInput
+            <IngredientItem
               isNew
               id="ingredients"
               label="Ingredientes"

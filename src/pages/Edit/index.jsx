@@ -7,7 +7,7 @@ import { BackButton } from "../../components/BackButton";
 import { FileInput } from "../../components/FileInput";
 import { Input } from "../../components/Input";
 import { Select } from "../../components/Select";
-import { TagInput } from "../../components/TagInput";
+import { IngredientItem } from "../../components/IngredientItem";
 import { Textarea } from "../../components/Textarea";
 import { Button } from "../../components/Button";
 
@@ -43,7 +43,7 @@ export function Edit() {
             <option value="beverage">Bebida</option>
           </Select>
           <div className="ingredients-wrapper">
-            <TagInput
+            <IngredientItem
               id="ingredients"
               label="Ingredientes"
               placeholder="Adicionar"
