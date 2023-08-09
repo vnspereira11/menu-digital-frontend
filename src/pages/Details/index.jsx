@@ -1,13 +1,18 @@
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+
+import { api } from "../../services/api";
+
 import { FiSearch } from "react-icons/fi";
 import { PiReceiptBold } from "react-icons/pi";
 
-import dishImg from "../../assets/ravanello300.svg";
+import mealImg from "../../assets/ravanello300.svg";
 import {
   Container,
   Content,
-  DishImage,
-  DishData,
-  DishTags,
+  MealImage,
+  MealData,
+  MealIngredients,
   AddOrder,
 } from "./styles";
 
@@ -20,6 +25,17 @@ import { Stepper } from "../../components/Stepper";
 import { Footer } from "../../components/Footer";
 
 export function Details() {
+  const [data, setData] = useState(null);
+  const params = useParams();
+
+  useEffect(() => {
+    async function fetchMeal() {
+      const response = await api.get(`/meals/${params.id}`);
+      setData(response.data);
+    }
+    fetchMeal();
+  }, []);
+
   return (
     <Container>
       <Header>
@@ -32,22 +48,22 @@ export function Details() {
       <main>
         <BackButton title="voltar" to="/" />
         <Content>
-          <DishImage>
-            <img src={dishImg} alt="" />
-          </DishImage>
-          <DishData>
-            <h1>Salada Ravanello</h1>
-            <p>
-              Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
-            </p>
-            <DishTags>
-              <Ingredient title="alface" />
-              <Ingredient title="cebola" />
-              <Ingredient title="pão naan" />
-              <Ingredient title="pepino" />
-              <Ingredient title="rabanete" />
-              <Ingredient title="tomate" />
-            </DishTags>
+          <MealImage>
+            <img src={mealImg} alt="" />
+          </MealImage>
+          <MealData>
+            <h1>{data.name}</h1>
+            <p>{data.description}</p>
+            {data.ingredients && (
+              <MealIngredients>
+                {data.ingredients.map((ingredient) => (
+                  <Ingredient
+                    key={String(ingredient.id)}
+                    title={ingredient.name}
+                  />
+                ))}
+              </MealIngredients>
+            )}
             <AddOrder>
               <Stepper count="01" />
               <OrderButton
@@ -56,7 +72,7 @@ export function Details() {
                 amount={25}
               />
             </AddOrder>
-          </DishData>
+          </MealData>
         </Content>
       </main>
       <Footer />

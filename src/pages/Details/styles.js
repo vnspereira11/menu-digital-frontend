@@ -31,7 +31,7 @@ export const Content = styled.article`
   }
 `;
 
-export const DishImage = styled.section`
+export const MealImage = styled.section`
   > img {
     display: block;
     max-width: 100%;
@@ -48,7 +48,7 @@ export const DishImage = styled.section`
   }
 `;
 
-export const DishData = styled.section`
+export const MealData = styled.section`
   font-family: "Poppins", sans-serif;
   margin: 0 auto 4.8rem;
   text-align: center;
@@ -83,7 +83,7 @@ export const DishData = styled.section`
   }
 `;
 
-export const DishTags = styled.section`
+export const MealIngredients = styled.section`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
