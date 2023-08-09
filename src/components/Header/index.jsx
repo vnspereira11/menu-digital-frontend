@@ -10,8 +10,9 @@ import { Container, Menu, Brand, Busca, Buttons, Logout } from "./styles";
 import { Button } from "../Button";
 import { OrderButton } from "../OrderButton";
 
-export function Header({ children, isAdmin, ...rest }) {
-  const { signOut } = useAuth();
+export function Header({ children, ...rest }) {
+  const { user, signOut } = useAuth();
+  const isAdmin = user && user.admin ? true : false;
 
   return (
     <Container {...rest}>
