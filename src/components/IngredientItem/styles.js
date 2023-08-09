@@ -8,9 +8,8 @@ export const Container = styled.div`
     isNew ? "transparent" : theme.COLORS.LIGHT_600};
   border: ${({ theme, isNew }) =>
     isNew ? `1px dashed ${theme.COLORS.LIGHT_500}` : "none"};
-
   border-radius: 0.8rem;
-  margin-right: 1.6rem;
+
   padding: 1rem 1.6rem;
 
   > input {
