@@ -17,7 +17,7 @@ export const Container = styled.div`
     justify-content: center;
   }
 
-  > .dish-details {
+  > .meal-details {
     display: flex;
     flex-direction: column;
     align-items: center;

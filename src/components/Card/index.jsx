@@ -21,12 +21,17 @@ export function Card({ data, ...rest }) {
   }
 
   return (
-    <Container {...rest}>
+    <Container className={`${isAdmin ? "is-admin" : ""}`} {...rest}>
       <Favorite>{isAdmin ? <FiEdit3 /> : <FiHeart />}</Favorite>
-      <div className="dish-details">
+      <div className="meal-details">
         <img src={mealImg} alt="" />
-        <Link to={`/details/${data.id}`}>{data.title}</Link>
-        <span className="price">{data.price}</span>
+        <Link to={`/details/${data.id}`}>{data.name}</Link>
+        <span className="price">
+          {data.price.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          })}
+        </span>
         {isAdmin ? null : <Stepper count="01" />}
       </div>
       {isAdmin ? null : <Button title="incluir" />}
