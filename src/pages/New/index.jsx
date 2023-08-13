@@ -17,6 +17,7 @@ import { Footer } from "../../components/Footer";
 import { api } from "../../services/api";
 
 export function New() {
+  const [mealImage, setMealImage] = useState(null);
   const [name, setName] = useState("");
   const [category, setCategory] = useState("meal");
   const [price, setPrice] = useState(0);
@@ -26,6 +27,11 @@ export function New() {
   const [newIngredient, setNewIngredient] = useState("");
 
   const navigate = useNavigate();
+
+  function handleMealImage(event) {
+    const file = event.target.files[0];
+    setMealImage(file);
+  }
 
   function handleAddIngredient() {
     setIngredients((prevState) => [...prevState, newIngredient]);
@@ -39,23 +45,36 @@ export function New() {
   }
 
   async function handleNewMeal() {
-    if (!name || !price || !description) {
-      return alert("Preencha ss campos Nome, Preço e Descrição.");
+    if (!name || !category || !price || !description) {
+      return alert("Preencha os campos Nome, Categoria, Preço e Descrição.");
     }
 
     if (newIngredient) {
       return alert("Confirme o cadastro do ingrediente clicando em +");
     }
 
-    await api.post("/meals", {
-      name,
-      category,
-      ingredients,
-      price,
-      description,
-    });
-    alert("Prato cadastrado com sucesso!");
-    navigate("/");
+    try {
+      const formData = new FormData();
+
+      formData.append("name", name);
+      formData.append("category", category);
+      formData.append("price", price);
+      formData.append("ingredients", JSON.stringify(ingredients));
+      formData.append("description", description);
+      formData.append("image", mealImage);
+
+      await api.post("/meals", formData);
+      alert("Prato cadastrado com sucesso!");
+      navigate(-1);
+    } catch (error) {
+      if (error.response) {
+        return alert(error.response.data.message);
+      } else {
+        return alert(
+          "Não foi possível cadastrar o prato. Tente novamente mais tarde."
+        );
+      }
+    }
   }
 
   return (
@@ -73,7 +92,12 @@ export function New() {
         <Form>
           <div className="image-wrapper">
             <p>Imagem do prato</p>
-            <FileInput id="image" icon={FiUpload} label="Imagem do prato" />
+            <FileInput
+              id="image"
+              icon={FiUpload}
+              label="Imagem do prato"
+              onChange={handleMealImage}
+            />
           </div>
           <Input
             id="name"
