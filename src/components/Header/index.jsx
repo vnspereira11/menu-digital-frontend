@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { PiReceiptBold } from "react-icons/pi";
 import { FiMenu, FiLogOut } from "react-icons/fi";
 
@@ -14,6 +15,12 @@ export function Header({ children, ...rest }) {
   const { user, signOut } = useAuth();
   const isAdmin = user && user.admin ? true : false;
 
+  const navigate = useNavigate();
+
+  function handleNavigation() {
+    navigate("/new");
+  }
+
   return (
     <Container {...rest}>
       <Menu>
@@ -29,7 +36,11 @@ export function Header({ children, ...rest }) {
       <Busca>{children}</Busca>
       <Buttons>
         {isAdmin ? (
-          <Button title="Novo prato" className="button-desktop" />
+          <Button
+            title="Novo prato"
+            className="button-desktop"
+            onClick={handleNavigation}
+          />
         ) : (
           <OrderButton icon={PiReceiptBold} title="Pedidos" amount="0" />
         )}
