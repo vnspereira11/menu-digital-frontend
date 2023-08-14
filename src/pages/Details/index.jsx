@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import { api } from "../../services/api";
 import { useAuth } from "../../hooks/auth";
@@ -14,12 +14,12 @@ import {
   MealImage,
   MealData,
   MealIngredients,
+  EditMeal,
   AddOrder,
 } from "./styles";
 
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
-import { OrderButton } from "../../components/OrderButton";
 import { BackButton } from "../../components/BackButton";
 import { Ingredient } from "../../components/Ingredient";
 import { Stepper } from "../../components/Stepper";
@@ -29,6 +29,7 @@ import { Button } from "../../components/Button";
 export function Details() {
   const [data, setData] = useState(null);
   const params = useParams();
+  const navigate = useNavigate();
 
   const { user } = useAuth();
   const isAdmin = user && user.admin ? true : false;
@@ -37,6 +38,10 @@ export function Details() {
     data && data.image
       ? `${api.defaults.baseURL}/files/${data.image}`
       : mealPlaceHolder;
+
+  function handleNavigation() {
+    navigate(`/edit/${params.id}`);
+  }
 
   useEffect(() => {
     async function fetchMeal() {
@@ -77,9 +82,9 @@ export function Details() {
                 </MealIngredients>
               )}
               {isAdmin && (
-                <AddOrder>
-                  <Button title="Editar prato" />
-                </AddOrder>
+                <EditMeal>
+                  <Button title="Editar prato" onClick={handleNavigation} />
+                </EditMeal>
               )}
               {!isAdmin && (
                 <AddOrder>

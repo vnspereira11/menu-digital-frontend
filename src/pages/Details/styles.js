@@ -96,6 +96,7 @@ export const MealIngredients = styled.section`
 `;
 
 export const AddOrder = styled.section`
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 1.6rem;
@@ -114,6 +115,7 @@ export const AddOrder = styled.section`
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    transition: all 0.3s;
 
     > svg {
       font-size: 2.2rem;
@@ -122,5 +124,14 @@ export const AddOrder = styled.section`
     &:hover {
       background-color: ${({ theme }) => theme.COLORS.TOMATO_200};
     }
+  }
+`;
+
+export const EditMeal = styled.section`
+  width: 100%;
+  margin-top: 4.8rem;
+
+  @media (min-width: 1024px) {
+    width: 13.1rem;
   }
 `;

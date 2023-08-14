@@ -8,7 +8,7 @@ export const Container = styled.button`
 
   position: relative;
 
-  transform: all 0.3s;
+  transition: all 0.3s;
 
   svg {
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
@@ -61,7 +61,7 @@ export const Container = styled.button`
     align-items: center;
     gap: 0.8rem;
     padding: 1.2rem 3.2rem;
-    transform: all 0.3s;
+    transition: all 0.3s;
 
     .title {
       display: block;
