@@ -1,5 +1,6 @@
+import { useState } from "react";
 import mealPlaceHolder from "../../assets/meal_placeholder.png";
-import { FiEdit3 } from "react-icons/fi";
+import { FiEdit3, FiPlus, FiMinus } from "react-icons/fi";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 
 import { api } from "../../services/api";
@@ -7,14 +8,26 @@ import { useAuth } from "../../hooks/auth";
 
 import { Link, useNavigate } from "react-router-dom";
 
-import { Container, Icon } from "./styles";
+import { Container, Icon, Stepper } from "./styles";
 
-import { Stepper } from "../Stepper";
 import { Button } from "../Button";
 
 export function Card({ data, ...rest }) {
   const { user } = useAuth();
   const isAdmin = user && user.admin ? true : false;
+
+  const [amount, setAmount] = useState(1);
+
+  function handleDecreaseAmount() {
+    if (amount < 1) {
+      return alert("A quantidade não pode ser menor que zero.");
+    }
+    setAmount(amount - 1);
+  }
+
+  function handleIncreaseAmount() {
+    setAmount(amount + 1);
+  }
 
   const mealImage =
     data && data.image
@@ -37,7 +50,6 @@ export function Card({ data, ...rest }) {
           </button>
         )}
       </Icon>
-
       <div className="meal-details">
         <img src={mealImage} alt="" />
         <Link to={`/details/${data.id}`}>{data.name}</Link>
@@ -47,7 +59,17 @@ export function Card({ data, ...rest }) {
             currency: "BRL",
           })}
         </span>
-        {isAdmin ? null : <Stepper count="01" />}
+        {isAdmin ? null : (
+          <Stepper>
+            <button onClick={handleDecreaseAmount}>
+              <FiMinus />
+            </button>
+            <span>{String(amount).padStart(2, "0")}</span>
+            <button onClick={handleIncreaseAmount}>
+              <FiPlus />
+            </button>
+          </Stepper>
+        )}
       </div>
       {isAdmin ? null : <Button title="incluir" />}
     </Container>
