@@ -100,4 +100,27 @@ export const AddOrder = styled.section`
   align-items: center;
   gap: 1.6rem;
   margin-top: 4.8rem;
+
+  > button {
+    height: 4.8rem;
+    background-color: ${({ theme }) => theme.COLORS.TOMATO_100};
+    border: none;
+    border-radius: 0.5rem;
+    color: ${({ theme }) => theme.COLORS.LIGHT_100};
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    padding: 1.2rem 2.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    > svg {
+      font-size: 2.2rem;
+    }
+
+    &:hover {
+      background-color: ${({ theme }) => theme.COLORS.TOMATO_200};
+    }
+  }
 `;

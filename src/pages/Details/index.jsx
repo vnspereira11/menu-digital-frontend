@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import { api } from "../../services/api";
+import { useAuth } from "../../hooks/auth";
 
 import { FiSearch } from "react-icons/fi";
 import { PiReceiptBold } from "react-icons/pi";
@@ -23,10 +24,14 @@ import { BackButton } from "../../components/BackButton";
 import { Ingredient } from "../../components/Ingredient";
 import { Stepper } from "../../components/Stepper";
 import { Footer } from "../../components/Footer";
+import { Button } from "../../components/Button";
 
 export function Details() {
   const [data, setData] = useState(null);
   const params = useParams();
+
+  const { user } = useAuth();
+  const isAdmin = user && user.admin ? true : false;
 
   const mealImage =
     data && data.image
@@ -71,14 +76,20 @@ export function Details() {
                   ))}
                 </MealIngredients>
               )}
-              <AddOrder>
-                <Stepper count="01" />
-                <OrderButton
-                  icon={PiReceiptBold}
-                  title="Incluir R$ "
-                  amount={25}
-                />
-              </AddOrder>
+              {isAdmin && (
+                <AddOrder>
+                  <Button title="Editar prato" />
+                </AddOrder>
+              )}
+              {!isAdmin && (
+                <AddOrder>
+                  <Stepper count="01" />
+                  <button type="button">
+                    <PiReceiptBold />
+                    pedir - R$ <span>25,00</span>
+                  </button>
+                </AddOrder>
+              )}
             </MealData>
           </Content>
         )}
