@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { api } from "../../services/api";
 
@@ -37,6 +37,7 @@ export function Details() {
     async function fetchMeal() {
       const response = await api.get(`/meals/${params.id}`);
       setData(response.data);
+      console.log(response);
     }
     fetchMeal();
   }, []);

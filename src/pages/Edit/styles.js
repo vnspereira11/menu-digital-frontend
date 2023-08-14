@@ -39,6 +39,26 @@ export const Form = styled.form`
     }
   }
 
+  .ingredients-wrapper {
+    label {
+      display: inline-block;
+      color: ${({ theme }) => theme.COLORS.LIGHT_400};
+      font-size: 1.6rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .ingredients {
+      height: 4.8rem;
+      grid-column: 1 / 3;
+      display: flex;
+      justify-content: flex-start;
+      gap: 1.6rem;
+      background-color: ${({ theme }) => theme.COLORS.DARK_900};
+      border-radius: 0.8rem;
+      padding: 0.8rem;
+    }
+  }
+
   .button-wrapper {
     display: flex;
     align-items: center;

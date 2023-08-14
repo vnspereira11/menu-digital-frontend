@@ -56,12 +56,12 @@ export function New() {
     try {
       const formData = new FormData();
 
+      formData.append("image", mealImage);
       formData.append("name", name);
       formData.append("category", category);
-      formData.append("price", price);
       formData.append("ingredients", JSON.stringify(ingredients));
+      formData.append("price", price);
       formData.append("description", description);
-      formData.append("image", mealImage);
 
       await api.post("/meals", formData);
       alert("Prato cadastrado com sucesso!");
@@ -79,7 +79,7 @@ export function New() {
 
   return (
     <Container>
-      <Header isAdmin>
+      <Header>
         <Input
           icon={FiSearch}
           type="text"
