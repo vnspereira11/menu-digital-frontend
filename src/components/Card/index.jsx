@@ -29,6 +29,30 @@ export function Card({ data, ...rest }) {
     setAmount(amount + 1);
   }
 
+  async function handleAmountMeals() {
+    if (amount <= 0) {
+      return alert("Adicione pelo menos um prato ao pedido.");
+    }
+
+    try {
+      await api.post("/order_meals", {
+        amount: amount,
+        meal_id: data.id,
+        user_id: user.id,
+      });
+      console.log(typeof amount);
+      alert("Adicionado com sucesso!");
+    } catch (error) {
+      if (error.response) {
+        return alert(error.response.data.message);
+      } else {
+        return alert(
+          "Não foi possível adicionar ao pedido. Tente novamente mais tarde."
+        );
+      }
+    }
+  }
+
   const mealImage =
     data && data.image
       ? `${api.defaults.baseURL}/files/${data.image}`
@@ -71,7 +95,7 @@ export function Card({ data, ...rest }) {
           </Stepper>
         )}
       </div>
-      {isAdmin ? null : <Button title="incluir" />}
+      {isAdmin ? null : <Button title="incluir" onClick={handleAmountMeals} />}
     </Container>
   );
 }
