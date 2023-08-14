@@ -16,10 +16,6 @@ export function Card({ data, ...rest }) {
 
   const navigate = useNavigate();
 
-  function handleDetails(id) {
-    navigate(`/details/${id}`);
-  }
-
   return (
     <Container className={`${isAdmin ? "is-admin" : ""}`} {...rest}>
       <Favorite>{isAdmin ? <FiEdit3 /> : <FiHeart />}</Favorite>

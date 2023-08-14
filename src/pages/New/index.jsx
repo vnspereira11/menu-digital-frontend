@@ -138,7 +138,7 @@ export function New() {
           </div>
           <Input
             id="price"
-            type="text"
+            type="number"
             label="Preço"
             placeholder="Ex.: R$ 00,00"
             onChange={(e) => setPrice(e.target.value)}
