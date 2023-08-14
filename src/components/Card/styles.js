@@ -60,14 +60,19 @@ export const Container = styled.div`
   }
 `;
 
-export const Favorite = styled.a`
-  border: none;
-  background: none;
+export const Icon = styled.div`
   position: absolute;
   top: 1.6rem;
   right: 1.6rem;
 
-  > svg {
+  > a {
+    color: ${({ theme }) => theme.COLORS.LIGHT_300};
+    font-size: 2.4rem;
+  }
+
+  > button {
+    border: none;
+    background: none;
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
     font-size: 2.4rem;
   }

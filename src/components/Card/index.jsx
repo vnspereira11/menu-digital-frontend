@@ -1,11 +1,13 @@
-import mealImg from "../../assets/ravanello300.svg";
-import { FiHeart, FiEdit3 } from "react-icons/fi";
+import mealPlaceHolder from "../../assets/meal_placeholder.png";
+import { FiEdit3 } from "react-icons/fi";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 
+import { api } from "../../services/api";
 import { useAuth } from "../../hooks/auth";
 
 import { Link, useNavigate } from "react-router-dom";
 
-import { Container, Favorite } from "./styles";
+import { Container, Icon } from "./styles";
 
 import { Stepper } from "../Stepper";
 import { Button } from "../Button";
@@ -14,13 +16,30 @@ export function Card({ data, ...rest }) {
   const { user } = useAuth();
   const isAdmin = user && user.admin ? true : false;
 
+  const mealImage =
+    data && data.image
+      ? `${api.defaults.baseURL}/files/${data.image}`
+      : mealPlaceHolder;
+
   const navigate = useNavigate();
 
   return (
     <Container className={`${isAdmin ? "is-admin" : ""}`} {...rest}>
-      <Favorite>{isAdmin ? <FiEdit3 /> : <FiHeart />}</Favorite>
+      <Icon>
+        {isAdmin && (
+          <Link to={`/edit/${data.id}`}>
+            <FiEdit3 />
+          </Link>
+        )}
+        {!isAdmin && (
+          <button>
+            <FaRegHeart />
+          </button>
+        )}
+      </Icon>
+
       <div className="meal-details">
-        <img src={mealImg} alt="" />
+        <img src={mealImage} alt="" />
         <Link to={`/details/${data.id}`}>{data.name}</Link>
         <span className="price">
           {data.price.toLocaleString("pt-BR", {
