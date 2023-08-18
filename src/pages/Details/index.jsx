@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 import { api } from "../../services/api";
 import { useAuth } from "../../hooks/auth";
+import { formatCurrency } from "../../utils/formatCurrency";
 
 import { FiSearch } from "react-icons/fi";
 import { PiReceiptBold } from "react-icons/pi";
@@ -91,7 +92,7 @@ export function Details() {
                   <Stepper count="01" />
                   <button type="button">
                     <PiReceiptBold />
-                    pedir - R$ <span>25,00</span>
+                    pedir - <span>{formatCurrency(data.price, "BRL")}</span>
                   </button>
                 </AddOrder>
               )}
