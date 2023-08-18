@@ -77,7 +77,8 @@ export function Edit() {
   async function handleDeleteMeal() {
     try {
       await api.delete(`/meals/${params.id}`);
-      navigate(-1);
+      alert("Prato excluído com sucesso!");
+      navigate("/");
     } catch (error) {
       if (error.response) {
         return alert(error.response.data.message);
