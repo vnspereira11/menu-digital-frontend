@@ -39,13 +39,6 @@ export const MealImage = styled.section`
     border-radius: 50%;
     margin-bottom: 1.6rem;
   }
-
-  @media (min-width: 1024px) {
-    img {
-      width: 39rem;
-      height: 39rem;
-    }
-  }
 `;
 
 export const MealData = styled.section`
