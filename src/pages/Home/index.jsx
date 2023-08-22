@@ -23,7 +23,6 @@ export function Home({ ...rest }) {
     async function fetchMeals() {
       try {
         const response = await api.get(`/meals?search=${search}`);
-        console.log(response);
         setMeals(response.data.filter((meal) => meal.category === "meal"));
         setDesserts(
           response.data.filter((meal) => meal.category === "dessert")
@@ -31,7 +30,15 @@ export function Home({ ...rest }) {
         setBeverages(
           response.data.filter((meal) => meal.category === "beverage")
         );
-      } catch {}
+      } catch (error) {
+        if (error.response) {
+          return alert(error.response.data.message);
+        } else {
+          return alert(
+            "Não foi possível exibir cardápio. Tente novamente mais tarde."
+          );
+        }
+      }
     }
 
     fetchMeals();

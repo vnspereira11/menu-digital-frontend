@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 import mealPlaceHolder from "../../assets/meal_placeholder.png";
 import { FiEdit3, FiPlus, FiMinus } from "react-icons/fi";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 
 import { api } from "../../services/api";
+
 import { useAuth } from "../../hooks/auth";
 
-import { Link, useNavigate } from "react-router-dom";
+import { formatCurrency } from "../../utils/formatCurrency";
+
+import { Link } from "react-router-dom";
 
 import { Container, Icon, Stepper } from "./styles";
 
@@ -15,6 +19,33 @@ import { Button } from "../Button";
 export function Card({ data, ...rest }) {
   const { user } = useAuth();
   const isAdmin = user && user.admin ? true : false;
+
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [favoriteId, setFavoriteId] = useState(null);
+
+  async function handleFavorites() {
+    try {
+      if (isFavorite) {
+        await api.delete(`/favorites/${favoriteId}`);
+        setIsFavorite(false);
+      } else {
+        const response = await api.post(`/favorites`, {
+          user_id: user.id,
+          meal_id: data.id,
+        });
+        setIsFavorite(true);
+        setFavoriteId(response.data.id);
+      }
+    } catch (error) {
+      if (error.response) {
+        return alert(error.response.data.message);
+      } else {
+        return alert(
+          "Não foi possível concluir a ação. Tente novamente mais tarde."
+        );
+      }
+    }
+  }
 
   const [amount, setAmount] = useState(1);
 
@@ -40,7 +71,6 @@ export function Card({ data, ...rest }) {
         meal_id: data.id,
         user_id: user.id,
       });
-      console.log(typeof amount);
       alert("Adicionado com sucesso!");
     } catch (error) {
       if (error.response) {
@@ -58,10 +88,33 @@ export function Card({ data, ...rest }) {
       ? `${api.defaults.baseURL}/files/${data.image}`
       : mealPlaceHolder;
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    async function fetchFavorites() {
+      try {
+        const response = await api.get("/favorites");
+        const favorites = response.data;
+        const favorite = favorites.find((fav) => fav.meal_id === data.id);
+        setIsFavorite(favorite ? true : false);
+        setFavoriteId(favorite ? favorite.id : null);
+      } catch (error) {
+        if (error.response) {
+          return alert(error.response.data.message);
+        } else {
+          return alert(
+            "Não foi possível buscar os favoritos. Tente novamente mais tarde."
+          );
+        }
+      }
+    }
+    fetchFavorites();
+  }, []);
 
   return (
-    <Container className={`${isAdmin ? "is-admin" : ""}`} {...rest}>
+    <Container
+      className={`${isAdmin ? "is-admin" : ""}`}
+      isfavorite={isFavorite ? 1 : 0}
+      {...rest}
+    >
       <Icon>
         {isAdmin && (
           <Link to={`/edit/${data.id}`}>
@@ -69,20 +122,15 @@ export function Card({ data, ...rest }) {
           </Link>
         )}
         {!isAdmin && (
-          <button>
-            <FaRegHeart />
+          <button onClick={handleFavorites}>
+            {isFavorite ? <FaHeart /> : <FaRegHeart />}
           </button>
         )}
       </Icon>
       <div className="meal-details">
         <img src={mealImage} alt="" />
         <Link to={`/details/${data.id}`}>{data.name}</Link>
-        <span className="price">
-          {data.price.toLocaleString("pt-BR", {
-            style: "currency",
-            currency: "BRL",
-          })}
-        </span>
+        <span className="price">{formatCurrency(data.price, "BRL")}</span>
         {isAdmin ? null : (
           <Stepper>
             <button onClick={handleDecreaseAmount}>

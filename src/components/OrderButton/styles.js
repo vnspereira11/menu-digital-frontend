@@ -41,7 +41,7 @@ export const Container = styled.button`
     left: 1.8rem;
   }
 
-  .amount {
+  .total-amount {
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
     font-family: "Poppins", sans-serif;
     font-size: 1.4rem;
