@@ -24,11 +24,11 @@ export default createGlobalStyle`
 
   a {
     text-decoration: none;
-    transform: filter 0.2s;
+    transform: filter 0.3s;
   }
 
   a:hover {
-    filter: brightness(0.9);
+    filter: brightness(0.7);
   }
 
   a, button {

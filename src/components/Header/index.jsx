@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { PiReceiptBold } from "react-icons/pi";
 import { FiMenu, FiLogOut } from "react-icons/fi";
@@ -8,8 +8,17 @@ import logo from "../../assets/polygon.svg";
 import { api } from "../../services/api";
 import { useAuth } from "../../hooks/auth";
 
-import { Container, Menu, Brand, Busca, Buttons, Logout } from "./styles";
+import {
+  Container,
+  Navbar,
+  Brand,
+  SearchBar,
+  NewMeal,
+  ShoppingCart,
+  Logout,
+} from "./styles";
 
+import { MenuMobile } from "../MenuMobile";
 import { Button } from "../Button";
 import { OrderButton } from "../OrderButton";
 
@@ -17,10 +26,11 @@ export function Header({ children, ...rest }) {
   const { user, signOut } = useAuth();
   const isAdmin = user && user.admin ? true : false;
 
+  const [menuIsVisible, setMenuIsVisible] = useState(false);
+
   const [totalAmount, setTotalAmount] = useState(0);
 
   const navigate = useNavigate();
-  const params = useParams();
 
   function handleNavigation() {
     navigate("/new");
@@ -36,9 +46,16 @@ export function Header({ children, ...rest }) {
 
   return (
     <Container {...rest}>
-      <Menu>
-        <FiMenu />
-      </Menu>
+      <MenuMobile
+        menuIsVisible={menuIsVisible}
+        setMenuIsVisible={setMenuIsVisible}
+      />
+      <Navbar>
+        <button type="button" onClick={() => setMenuIsVisible(true)}>
+          <FiMenu />
+        </button>
+      </Navbar>
+
       <Brand>
         <div className="logo-wrapper">
           <img src={logo} alt="Polígono azul decorativo" />
@@ -46,22 +63,25 @@ export function Header({ children, ...rest }) {
         </div>
         {isAdmin && <span>admin</span>}
       </Brand>
-      <Busca>{children}</Busca>
-      <Buttons>
-        {isAdmin ? (
-          <Button
-            title="Novo prato"
-            className="button-desktop"
-            onClick={handleNavigation}
-          />
-        ) : (
+
+      <SearchBar>{children}</SearchBar>
+
+      {isAdmin ? (
+        <NewMeal>
+          <Button title="Novo prato" onClick={handleNavigation} />
+        </NewMeal>
+      ) : null}
+
+      {!isAdmin ? (
+        <ShoppingCart>
           <OrderButton
             icon={PiReceiptBold}
             title="Pedidos"
             totalAmount={totalAmount}
           />
-        )}
-      </Buttons>
+        </ShoppingCart>
+      ) : null}
+
       <Logout onClick={signOut}>
         <FiLogOut />
       </Logout>

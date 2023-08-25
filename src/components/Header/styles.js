@@ -5,30 +5,34 @@ export const Container = styled.header`
   width: 100%;
   height: 11.8rem;
   background-color: ${({ theme }) => theme.COLORS.DARK_600};
-  padding: 2.4rem 4rem;
+  padding: 5.6rem 2.8rem 2.4rem;
 
   display: flex;
   align-items: center;
   justify-content: space-around;
   gap: 3.2rem;
 
-  @media (max-width: 770px) {
-    padding: 6.4rem 2.8rem;
+  @media (min-width: 1020px) {
+    padding: 2.4rem 12.3rem;
   }
 `;
 
-export const Menu = styled.button`
-  height: 2.4rem;
-  width: 2.4rem;
-  border: 0;
-  background: 0;
-
-  svg {
-    font-size: 2.4rem;
+export const Navbar = styled.nav`
+  > button {
+    height: 2.8rem;
+    width: 2.8rem;
+    border: 0;
+    background: 0;
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
+    font-size: 2.8rem;
+    transform: filter 0.3s;
+
+    &:hover {
+      filter: brightness(0.7);
+    }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1020px) {
     display: none;
   }
 `;
@@ -61,7 +65,7 @@ export const Brand = styled.div`
       font-weight: 700;
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1020px) {
       img {
         width: 3rem;
         height: 3rem;
@@ -78,16 +82,16 @@ export const Brand = styled.div`
     font-size: 1.2rem;
     font-weight: 400;
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1020px) {
       place-self: flex-end;
     }
   }
 `;
 
-export const Busca = styled.div`
+export const SearchBar = styled.div`
   flex: 1;
 
-  @media (max-width: 770px) {
+  @media (max-width: 1020px) {
     display: none;
   }
 `;
@@ -108,21 +112,17 @@ export const Logout = styled.button`
     opacity: 0.8;
   }
 
-  @media (max-width: 770px) {
+  @media (max-width: 1020px) {
     display: none;
   }
 `;
 
-export const Buttons = styled.div`
-  max-width: 21.6rem;
+export const NewMeal = styled.div`
+  width: 21.6rem;
 
-  .button-desktop {
-    width: 21.6rem;
-  }
-
-  @media (max-width: 1024px) {
-    .button-desktop {
-      display: none;
-    }
+  @media (max-width: 1020px) {
+    display: none;
   }
 `;
+
+export const ShoppingCart = styled.div``;
