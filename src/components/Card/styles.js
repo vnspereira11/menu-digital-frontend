@@ -76,6 +76,10 @@ export const Icon = styled.div`
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
     font-size: 2.4rem;
   }
+
+  .favorited {
+    color: ${({ theme }) => theme.COLORS.TOMATO_100};
+  }
 `;
 
 export const Stepper = styled.div`

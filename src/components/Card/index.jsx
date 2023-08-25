@@ -123,7 +123,7 @@ export function Card({ data, ...rest }) {
         )}
         {!isAdmin && (
           <button onClick={handleFavorites}>
-            {isFavorite ? <FaHeart /> : <FaRegHeart />}
+            {isFavorite ? <FaHeart className="favorited"/> : <FaRegHeart />}
           </button>
         )}
       </Icon>
