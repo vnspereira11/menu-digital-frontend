@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.header`
   grid-area: header;
@@ -9,45 +9,49 @@ export const Container = styled.header`
 
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  gap: 3.2rem;
 
-  @media (min-width: 1020px) {
-    padding: 2.4rem 12.3rem;
+  ${({ isAdmin }) =>
+    !isAdmin &&
+    css`
+      justify-content: space-between;
+    `}
+
+  @media (min-width: 800px) {
+    gap: 3.2rem;
+    padding: 2.4rem 4rem;
+  }
+
+  @media (min-width: 1000px) {
+    padding: 2.4rem 6rem;
   }
 `;
 
-export const Navbar = styled.nav`
-  > button {
-    height: 2.8rem;
-    width: 2.8rem;
-    border: 0;
-    background: 0;
+export const Menu = styled.button`
+  width: 2.8rem;
+  height: 2.8rem;
+  background: none;
+  border: none;
+  transform: filter 0.3s;
+
+  svg {
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
     font-size: 2.8rem;
-    transform: filter 0.3s;
-
-    &:hover {
-      filter: brightness(0.7);
-    }
   }
 
-  @media (min-width: 1020px) {
+  &:hover {
+    filter: brightness(0.7);
+  }
+
+  @media (min-width: 800px) {
     display: none;
   }
 `;
 
 export const Brand = styled.div`
-  max-width: 100%;
   display: flex;
   align-items: center;
   gap: 0.8rem;
-
-  @media (min-width: 1024px) {
-    max-width: 18.6rem;
-    flex-direction: column;
-    gap: 0;
-  }
+  margin: 0 auto;
 
   .logo-wrapper {
     display: flex;
@@ -61,11 +65,25 @@ export const Brand = styled.div`
 
     p {
       color: ${({ theme }) => theme.COLORS.LIGHT_100};
-      font-size: 2.1rem;
+      font-size: 2.2rem;
       font-weight: 700;
     }
+  }
 
-    @media (min-width: 1020px) {
+  span {
+    color: ${({ theme }) => theme.COLORS.CAKE_200};
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 160%;
+  }
+
+  @media (min-width: 800px) {
+    max-width: 19.7rem;
+    margin: 0;
+    flex-direction: column;
+    gap: 0;
+
+    .logo-wrapper {
       img {
         width: 3rem;
         height: 3rem;
@@ -75,54 +93,52 @@ export const Brand = styled.div`
         font-size: 2.4rem;
       }
     }
-  }
 
-  span {
-    color: ${({ theme }) => theme.COLORS.CAKE_200};
-    font-size: 1.2rem;
-    font-weight: 400;
-
-    @media (min-width: 1020px) {
-      place-self: flex-end;
+    span {
+      place-self: end;
     }
   }
 `;
 
 export const SearchBar = styled.div`
-  flex: 1;
+  display: none;
 
-  @media (max-width: 1020px) {
-    display: none;
-  }
-`;
-
-export const Logout = styled.button`
-  height: 3.2rem;
-  width: 3.2rem;
-  border: none;
-  background: none;
-  transition: all 0.3s;
-
-  svg {
-    font-size: 3.2rem;
-    color: ${({ theme }) => theme.COLORS.LIGHT_100};
-  }
-
-  &:hover {
-    opacity: 0.8;
-  }
-
-  @media (max-width: 1020px) {
-    display: none;
+  @media (min-width: 800px) {
+    display: block;
+    flex: 1;
   }
 `;
 
 export const NewMeal = styled.div`
-  width: 21.6rem;
+  display: none;
 
-  @media (max-width: 1020px) {
-    display: none;
+  @media (min-width: 800px) {
+    display: block;
+    width: 21.6rem;
   }
 `;
 
-export const ShoppingCart = styled.div``;
+export const Cart = styled.div``;
+
+export const Logout = styled.button`
+  display: none;
+
+  width: 3.2rem;
+  height: 3.2rem;
+  background: none;
+  border: none;
+  transform: filter 0.3s;
+
+  svg {
+    color: ${({ theme }) => theme.COLORS.LIGHT_100};
+    font-size: 3.2rem;
+  }
+
+  &:hover {
+    filter: brightness(0.7);
+  }
+
+  @media (min-width: 800px) {
+    display: block;
+  }
+`;

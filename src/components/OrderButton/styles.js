@@ -53,7 +53,7 @@ export const Container = styled.button`
     opacity: 0.8;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 800px) {
     height: 4.8rem;
     position: static;
     background-color: ${({ theme }) => theme.COLORS.TOMATO_100};
