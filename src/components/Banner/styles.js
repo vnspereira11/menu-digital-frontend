@@ -1,56 +1,60 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  /* width: 100%; */
+export const Container = styled.section`
+  min-width: 42rem;
+  margin: 0 auto 6rem;
 
-  > .banner-bg {
-    width: 37.6rem;
-    height: 12rem;
-    background: ${({ theme }) => theme.COLORS.GRADIENT_200};
-    border-radius: 0.8rem;
-    margin-top: 4.4rem;
-    margin-bottom: 6.2rem;
-    margin-left: 1.6rem;
-    margin-right: 1.6rem;
-
-    @media (min-width: 1024px) {
-      margin-top: 12rem;
-
-      width: 112rem;
-      height: 26rem;
-    }
-  }
-`;
-
-export const Wrapper = styled.div`
-  font-family: "Poppins", sans-serif;
   display: flex;
   align-items: center;
+
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 70%;
+    background: ${({ theme }) => theme.COLORS.GRADIENT_200};
+    border-radius: 3px;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 1rem;
+  }
 
   img {
     width: 19.1rem;
     height: 14.9rem;
-    margin-left: -3rem;
-    margin-top: -3rem;
+    object-fit: cover;
+    align-self: end;
+  }
 
-    @media (min-width: 1024px) {
-      width: 592px;
-      height: 366px;
-      margin-left: -10.8rem;
-      margin-top: -10.8rem;
+  @media (min-width: 680px) {
+    img {
+      width: 24.1rem;
+      height: 19.9rem;
     }
   }
 
-  .banner-title {
-    max-width: 20rem;
-    margin-right: 2rem;
+  @media (min-width: 1000px) {
+    img {
+      width: 36.2rem;
+      height: 27.8rem;
+    }
   }
+`;
 
-  h1 {
+export const BannerInfos = styled.div`
+  color: ${({ theme }) => theme.COLORS.LIGHT_300};
+  font-family: "Poppins", sans-serif;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  h2 {
     font-size: 1.8rem;
     font-weight: 600;
+    line-height: 140%;
   }
 
   p {
@@ -59,13 +63,22 @@ export const Wrapper = styled.div`
     line-height: 140%;
   }
 
-  @media (min-width: 1024px) {
-    .banner-title {
-      max-width: 800rem;
-      margin-right: 2rem;
+  @media (min-width: 760px) {
+    margin-left: 2rem;
+
+    h2 {
+      font-size: 2.4rem;
     }
 
-    h1 {
+    p {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    margin-top: 8rem;
+
+    h2 {
       font-size: 4rem;
     }
 

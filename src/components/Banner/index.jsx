@@ -1,18 +1,17 @@
-import bgImage from "../../assets/background.svg";
-import { Container, Wrapper } from "./styles";
+import bannerImage from "../../assets/background.svg";
+import {
+  Container,
+  BannerInfos,
+} from "./styles";
 
 export function Banner() {
   return (
     <Container>
-      <div className="banner-bg">
-        <Wrapper>
-          <img src={bgImage} alt="" />
-          <div className="banner-title">
-            <h1>Sabores inigualáveis</h1>
+          <img src={bannerImage} alt="Macarons coloridos e frutas vermelhas." />
+          <BannerInfos>
+            <h2>Sabores inigualáveis</h2>
             <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
-          </div>
-        </Wrapper>
-      </div>
+          </BannerInfos>
     </Container>
   );
 }
