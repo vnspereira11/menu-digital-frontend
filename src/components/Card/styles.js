@@ -78,7 +78,7 @@ export const Icon = styled.div`
   }
 
   .favorited {
-    color: ${({ theme }) => theme.COLORS.TOMATO_100};
+    color: ${({ theme }) => theme.COLORS.TOMATO_300};
   }
 `;
 
