@@ -10,7 +10,7 @@ Apresenta interfaces diferenciadas para dois tipos de personas: Usuário Admin e
 Este projeto faz parte do Desafio Final do programa de formação de desenvolvedores Explorer da Rocketseat. O design da aplicação foi fornecido no material do curso, com os créditos atribuídos à Rocketseat.
 
 
-## Interfaces desenvolvidas
+## Interfaces e funcionalidades desenvolvidas
 
 - **Sign In:** Página de autenticação para os usuários. Os usuários podem fazer login utilizando suas credenciais registradas.
 
