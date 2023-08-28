@@ -94,7 +94,6 @@ export function Edit() {
     async function fetchMeal() {
       const response = await api.get(`/meals/${params.id}`);
       setData(response.data);
-      console.log(response);
 
       const { name, category, ingredients, price, description } = response.data;
       setName(name);

@@ -152,7 +152,7 @@ export function New() {
             />
           </div>
           <div className="button-wrapper">
-            <Button title="Salvar alterações" onClick={handleNewMeal} />
+            <Button title="Adicionar prato" onClick={handleNewMeal} />
           </div>
         </Form>
       </main>

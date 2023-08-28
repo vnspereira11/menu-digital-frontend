@@ -15,8 +15,12 @@ export function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
   const navigate = useNavigate();
+
+  const updateButtonState = () =>
+    setIsButtonDisabled(!(name && email && password.length >= 5));
 
   function handleSignUp() {
     if (!name || !email || !password) {
@@ -56,23 +60,36 @@ export function SignUp() {
             type="text"
             label="Seu nome"
             placeholder="Exemplo: Maria da Silva"
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => {
+              setName(e.target.value);
+              updateButtonState();
+            }}
           />
           <Input
             id="email"
             type="text"
             label="Email"
             placeholder="Exemplo: exemplo@exemplo.com.br"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              updateButtonState();
+            }}
           />
           <Input
             id="password"
             type="password"
             label="Senha"
             placeholder="No mínimo 6 caracteres"
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              updateButtonState();
+            }}
           />
-          <Button title="Criar conta" onClick={handleSignUp} />
+          <Button
+            title="Criar conta"
+            disabled={isButtonDisabled}
+            onClick={handleSignUp}
+          />
           <Link to="/">Já tenho uma conta</Link>
         </Form>
       </main>
